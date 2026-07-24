@@ -27,9 +27,10 @@ Done:
 - Collision-safe file moving (no silent overwrites)
 - No unnecessary re-processing of the tool's own output folders
 - CLI configuration via --folder (safe scoped testing or real runs)
-
-Next up:
 - Dry-run mode
 - Structured logging instead of print statements
-- Test coverage (pytest)
+- Type hints and docstrings on all functions
+- Test coverage (pytest) — 4 tests passing
+
+Next up:
 - Streamlit UI
