@@ -1,36 +1,67 @@
 # File Organizer Automation 🗂️
 
-A Python automation script that automatically sorts your Downloads and Desktop folders by file type and date.
+A Python automation tool that sorts Downloads and Desktop folders by file type
+and date, with collision-safe moving, CLI configuration, and a Streamlit UI.
+
+**Live demo:** https://raniarashid780-sketch-file-organizer-autom-streamlit-app-sypeq4.streamlit.app/
 
 ## What It Does
+
 - Scans Downloads and Desktop folders
 - Sorts files into folders by type (Images, Documents, Videos, Music)
-- Organizes by date created (Year-Month)
+- Organizes by date modified (Year-Month)
 - Creates destination folders automatically if they don't exist
-- Skips open files gracefully without crashing
+- Never overwrites files with matching names — automatically renames
+  colliding files (`file.txt` → `file (1).txt` → `file (2).txt`)
+- Skips its own output folders on rerun instead of re-processing them
 
 ## How to Run
-python file_organizer_automation.py                          # organizes real Downloads/Desktop
-python file_organizer_automation.py --folder "path/to/folder" # organizes a specific folder
+
+Command line:
+
+###  Organize real Downloads/Desktop
+`python file_organizer_automation.py`
+
+### Organize a specific folder
+`python file_organizer_automation.py --folder "path/to/folder`
+
+### Preview changes without moving anything
+`python file_organizer_automation.py --dry-run`
+
+
+Web UI:
+
+`streamlit run streamlit_app.py`
+
 
 ## Modules Used
+
 - `pathlib` — building and finding folder paths, checking for filename collisions
 - `shutil` — moving files
 - `datetime` — organizing files by modification date
-- `argparse` — CLI configuration (--folder flag for safe testing or scoped runs)
+- `argparse` — CLI configuration (`--folder`, `--dry-run`)
+- `logging` — structured run output
+- `streamlit` — web UI
+
+## Testing
+
+Covered by a pytest suite (`test_file_organizer_automation.py`) — category
+lookup and end-to-end file-moving behavior, verified with pytest's `tmp_path`
+fixture for isolated test runs.
+
+`python -m pytest`
+
 
 ## Status
 
-🚧 In active development — not yet ready for production use.
+✅ v1 complete.
 
-Done:
 - Collision-safe file moving (no silent overwrites)
 - No unnecessary re-processing of the tool's own output folders
-- CLI configuration via --folder (safe scoped testing or real runs)
-- Dry-run mode
-- Structured logging instead of print statements
+- CLI configuration (`--folder`, `--dry-run`)
+- Structured logging
 - Type hints and docstrings on all functions
-- Test coverage (pytest) — 4 tests passing
+- Test coverage (pytest)
+- Streamlit UI, deployed
 
-Next up:
-- Streamlit UI
+Next: smart/ML-based file categorization (v2).
