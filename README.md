@@ -5,6 +5,10 @@ and date, with collision-safe moving, CLI configuration, and a Streamlit UI.
 
 **Live demo:** https://raniarashid780-sketch-file-organizer-autom-streamlit-app-sypeq4.streamlit.app/
 
+## Screenshot
+
+![File Organizer Automation — Streamlit UI showing a dry-run preview](assets/demo.png)
+
 ## What It Does
 
 - Scans Downloads and Desktop folders
