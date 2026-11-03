@@ -3,7 +3,7 @@
 A Python automation tool that sorts Downloads and Desktop folders by file type
 and date, with collision-safe moving, CLI configuration, and a Streamlit UI.
 
-**Live demo:** https://raniarashid780-sketch-file-organizer-autom-streamlit-app-sypeq4.streamlit.app/
+**Live demo:** https://rania-file-organizer.streamlit.app/
 
 ## Screenshot
 
